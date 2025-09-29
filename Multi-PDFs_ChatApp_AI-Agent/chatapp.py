@@ -14,13 +14,6 @@ load_dotenv()
 # os.getenv("GOOGLE_API_KEY")
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
-embeddings = GoogleGenerativeAIEmbeddings(
-    model="models/embedding-001",
-    google_api_key=os.getenv("GOOGLE_API_KEY")  # force API key usage
-)
-
-print("Google API Key:", os.getenv("GOOGLE_API_KEY"))
-
 def get_pdf_text(pdf_docs):
     text=""
     for pdf in pdf_docs:
